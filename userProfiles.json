@@ -1,0 +1,56 @@
+[
+    {
+        "firstName": "1firstName",
+        "lastName": "1lastName",
+        "email": "1@example.com",
+        "dateOfBirth": "1999-01-01",
+        "userPreferences": {
+            "theme": "dark",
+            "language": "en",
+            "notifications": true,
+            "subscription": true
+        },
+        "address": {
+            "street": "Main Road",
+            "city": "New York",
+            "state": "NY",
+            "zipCode": "10001"
+        }
+    },
+    {
+        "firstName": "Fot",
+        "lastName": "kol",
+        "email": "2@example.com",
+        "dateOfBirth": "2000-01-01",
+        "userPreferences": {
+            "theme": "light",
+            "language": "en",
+            "notifications": false,
+            "subscription": false
+        },
+        "address": {
+            "street": "Unk street",
+            "city": "Beijing",
+            "state": "BJ",
+            "zipCode": "23456"
+        }
+    },
+    {
+        "firstName": "Kraz",
+        "lastName": "Loas",
+        "email": "3@example.com",
+        "dateOfBirth": "2004-01-01",
+        "userPreferences": {
+            "theme": "dark",
+            "language": "cn",
+            "notifications": true,
+            "subscription": true
+        },
+        "address": {
+            "street": "409 njil street",
+            "city": "Langfang",
+            "state": "Hebei",
+            "zipCode": "2312313"
+        }
+    }
+]

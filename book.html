@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>XML Book Catalog</title>
+    <script>
+        // 使用JavaScript加载并解析XML文件
+        function loadXML() {
+            const xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState === 4 && this.status === 200) {
+                    displayBooks(this);
+                }
+            };
+            xhttp.open("GET", "book.xml", true);
+            xhttp.send();
+        }
+
+        // 显示书籍信息
+        function displayBooks(xml) {
+            const xmlDoc = xml.responseXML;
+            const books = xmlDoc.getElementsByTagName("book");
+            let output = "<h2>Book Catalog</h2>";
+            for (let i = 0; i < books.length; i++) {
+                const title = books[i].getElementsByTagName("title")[0].childNodes[0].nodeValue;
+                const author = books[i].getElementsByTagName("author")[0].childNodes[0].nodeValue;
+                const price = books[i].getElementsByTagName("price")[0].childNodes[0].nodeValue;
+                output += `<p><strong>Title:</strong> ${title}<br><strong>Author:</strong> ${author}<br><strong>Price:</strong> $${price}</p>`;
+            }
+            document.getElementById("bookCatalog").innerHTML = output;
+        }
+    </script>
+</head>
+<body onload="loadXML()">
+    <div id="bookCatalog"></div>
+    <p></p>
+    <p><a href="index.html">Go back to index</a></p>
+</body>
+</html>

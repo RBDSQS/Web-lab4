@@ -1,0 +1,13 @@
+<!-- book.xml -->
+<catalog>
+    <book id="1">
+        <title>1title</title>
+        <author>1author</author>
+        <price>1price</price>
+    </book>
+    <book id="2">
+        <title>2title</title>
+        <author>2author</author>
+        <price>2price</price>
+    </book>
+</catalog>

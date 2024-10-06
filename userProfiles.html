@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSON User Profiles</title>
+    <script>
+        // 使用JavaScript加载并解析JSON文件
+        function loadJSON() {
+            fetch("userProfiles.json")
+                .then(response => response.json())
+                .then(data => displayProfiles(data));
+        }
+
+        // 显示用户配置文件
+        function displayProfiles(profiles) {
+            let output = "<h2>User Profiles</h2>";
+            profiles.forEach(profile => {
+                output += `<p>
+                    <strong>Name:</strong> ${profile.firstName} ${profile.lastName}<br>
+                    <strong>Email:</strong> ${profile.email}<br>
+                    <strong>Date of Birth:</strong> ${profile.dateOfBirth}<br>
+                    <strong>Preferences:</strong><br>
+                    &nbsp;&nbsp;Theme: ${profile.userPreferences.theme}<br>
+                    &nbsp;&nbsp;Language: ${profile.userPreferences.language}<br>
+                    &nbsp;&nbsp;Notifications: ${profile.userPreferences.notifications}<br>
+                    &nbsp;&nbsp;Subscription: ${profile.userPreferences.subscription}<br>
+                    <strong>Address:</strong> ${profile.address.street}, ${profile.address.city}, ${profile.address.state} ${profile.address.zipCode}
+                </p>`;
+            });
+            document.getElementById("userProfiles").innerHTML = output;
+        }
+    </script>
+</head>
+<body onload="loadJSON()">
+    <div id="userProfiles"></div>
+    <p></p>
+    <p><a href="index.html">Go back to index</a></p>
+</body>
+</html>
